@@ -1,0 +1,9 @@
+dataset,src,y,사진,어두운_사진,어두운 비율 %
+D-Fire,AoF,양성,3370,1316,39.1
+D-Fire,AoF,음성,5008,395,7.9
+D-Fire,PublicDataset,양성,1170,122,10.4
+D-Fire,PublicDataset,음성,166,11,6.6
+D-Fire,WEB,양성,7149,1061,14.8
+D-Fire,WEB,음성,4635,490,10.6
+DeepFire,DeepFire,양성,948,147,15.5
+DeepFire,DeepFire,음성,948,18,1.9

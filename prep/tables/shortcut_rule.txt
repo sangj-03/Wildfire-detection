@@ -1,0 +1,10 @@
+p_sharp < 1732
+   p_bright < 48.74
+      → 1
+   p_bright ≥ 48.74
+      → 0
+p_sharp ≥ 1732
+   p_fire_px < 0.004817
+      → 1
+   p_fire_px ≥ 0.004817
+      → 0

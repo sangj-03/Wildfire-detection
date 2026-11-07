@@ -1,0 +1,58 @@
+{
+ "res_drop": {
+  "음성": 290
+ },
+ "box_lost": {
+  "연기": 40,
+  "불꽃": 5
+ },
+ "n_final": 422285,
+ "n_pos": 266338,
+ "n_neg": 155947,
+ "n_uncertain": 23729,
+ "n_moved_blocks": 32,
+ "n_moved_neg": 61679,
+ "drone_test_v1": 63.2,
+ "drone_test_v2": 22.6,
+ "drone_train_v1": 10.4,
+ "drone_train_v2": 19.9,
+ "fog_test_v1": 2332,
+ "fog_test_v2": 3524,
+ "fog_val_v1": 0,
+ "fog_val_v2": 7455,
+ "leak_v2_max_pct": 0.0,
+ "leak_v2_n": 12000,
+ "leak_v2_near": 0,
+ "n_boxes": 377630,
+ "n_cut": 91542,
+ "cut_pct": 24.2,
+ "cut_kept_median": 79.8,
+ "cut_by_name": {
+  "백색/회색연기": 53434,
+  "흑색연기": 38099,
+  "화염": 9
+ },
+ "cut_images": 89017,
+ "no_distractor_after_crop": 988,
+ "n_cams": 392,
+ "cams_by_stage": {
+  "음성": 204,
+  "양성": 141,
+  "보관: 음성 속 연기": 47
+ },
+ "cams_cctv": 10,
+ "cams_text": 26,
+ "n_processed": 422285,
+ "n_errors": 0,
+ "out_sizes": {
+  "1920x972": 422285
+ },
+ "cpu_hours": 3.64,
+ "n_dark_neg": 3220,
+ "dark_neg_top_place": "구정면",
+ "dark_neg_top_pct": 79.4,
+ "dark_neg_gujeong_pct": 90.1,
+ "n_dark": 43034,
+ "dark_pos_pct": 92.5,
+ "min_neg_bright": 2.7
+}

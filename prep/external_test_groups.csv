@@ -1,0 +1,27 @@
+묶음,조건 (pandas query),사진,거의 같은 사진 묶음
+D-Fire 전체,use and dataset == 'D-Fire',21498,10659
+D-Fire 음성,use and dataset == 'D-Fire' and y == 0,9809,3669
+D-Fire 양성,use and dataset == 'D-Fire' and y == 1,11689,7048
+감시 카메라(AoF) 음성,use and src == 'AoF' and y == 0,5008,303
+감시 카메라(AoF) 양성,use and src == 'AoF' and y == 1,3370,288
+인터넷(WEB) 음성,use and src == 'WEB' and y == 0,4635,3204
+인터넷(WEB) 양성,use and src == 'WEB' and y == 1,7149,6286
+공개 데이터 음성,use and src == 'PublicDataset' and y == 0,166,166
+D-Fire 밤(어두운) 음성,use and dataset == 'D-Fire' and y == 0 and dark,896,387
+D-Fire 밤(어두운) 양성,use and dataset == 'D-Fire' and y == 1 and dark,2499,1055
+적외선(흑백) 화면 음성,use and gray_cam and y == 0,58,25
+음성 · 구름,use and dataset == 'D-Fire' and y == 0 and tag == '구름',689,467
+음성 · 안개,use and dataset == 'D-Fire' and y == 0 and tag == '안개',668,152
+음성 · 노을·해,use and dataset == 'D-Fire' and y == 0 and tag == '노을·해',1191,538
+음성 · 밤 불빛,use and dataset == 'D-Fire' and y == 0 and tag == '밤 불빛',1074,353
+음성 · 번개,use and dataset == 'D-Fire' and y == 0 and tag == '번개',450,245
+음성 · 굴뚝·공장 연기,use and dataset == 'D-Fire' and y == 0 and tag == '굴뚝·공장 연기',59,21
+음성 · 산불처럼 보임(안개·렌즈 얼룩 등),use and dataset == 'D-Fire' and y == 0 and tag == '산불',833,39
+양성 · 불꽃,use and dataset == 'D-Fire' and y == 1 and sub == '불꽃',5822,4100
+양성 · 연기만,use and dataset == 'D-Fire' and y == 1 and sub == '연기',5867,2986
+양성 · 화염 짧은 변 <16px,use and dataset == 'D-Fire' and y == 1 and fire_short_fit < 16,27,25
+DeepFire 전체,use and dataset == 'DeepFire',1896,1891
+DeepFire 음성,use and dataset == 'DeepFire' and y == 0,948,945
+DeepFire 양성(불),use and dataset == 'DeepFire' and y == 1,948,946
+DeepFire 어두운 양성,use and dataset == 'DeepFire' and y == 1 and dark,147,147
+판별 불확실(연무 하늘) — 주 결과와 따로,label_issue == 'ambiguous',22,2

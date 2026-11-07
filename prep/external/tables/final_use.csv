@@ -1,0 +1,5 @@
+dataset,label_issue,양성,음성
+D-Fire,ambiguous,0,22
+D-Fire,fire_visible,0,7
+D-Fire,시험에 씀,11689,9809
+DeepFire,시험에 씀,948,948
