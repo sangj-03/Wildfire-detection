@@ -1,0 +1,18 @@
+# Data stage (notebooks and scripts). Tested with Python 3.13 on NVIDIA DGX Spark (aarch64).
+# The versions are the tested ones.
+numpy==2.4.6
+pandas==3.0.3
+pyarrow==25.0.0          # notebook caches (parquet)
+pillow==12.3.0
+scipy==1.18.0
+matplotlib==3.11.0
+opencv-python==5.0.0.93  # Telea inpainting of on-screen text (external_data.py)
+nbformat==5.10.4         # build_*.py write and run the notebooks
+nbclient==0.11.0
+nbconvert==7.17.2        # export_eda.py
+ipykernel==7.4.0
+
+# Modeling draft (modeling/) and the SigLIP look-alike tags (tag_lookalike_clip.py); install a CUDA build of torch first
+torch==2.11.0
+torchvision==0.26.0
+transformers==5.13.0

@@ -1,0 +1,33 @@
+# AI Hub data and everything that lists it frame by frame (AI Hub terms: no redistribution)
+data/
+notebooks/cache/
+notebooks/export/
+prep/manifest.csv.gz
+prep/uncertain.csv.gz
+prep/boxes.csv.gz
+report/aihub/*.csv.gz
+report/aihub/*.npy
+report/aihub/samples/
+report/aihub/leak_pairs.csv
+report/aihub/split_v*_check.csv
+report/aihub/split_v*_cross_*.csv
+report/lookalike/
+report/night_normal/
+view/
+
+# Photo grids and figures that show AI Hub frames
+prep/fig/before_after.jpg
+prep/fig/top_strips.jpg
+modeling/draft_outputs/aug_examples.jpg
+
+# Team documents (contain AI Hub photos)
+docs/
+teammate_*/
+
+# Vendored libraries, environments, caches
+pylib/
+pylib_hf/
+.venv*/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
