@@ -1,0 +1,37 @@
+{
+ "train_rows": 252725,
+ "epoch_len_n8": 45302,
+ "epoch0_epoch1_overlap": 0.417,
+ "batch_shape": [
+  16,
+  3,
+  972,
+  1920
+ ],
+ "dtype": "torch.float32",
+ "y_first_batch": [
+  1,
+  1,
+  1,
+  1,
+  0,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "mean_per_channel": [
+  -0.289,
+  -0.143,
+  -0.242
+ ],
+ "images_per_sec_12workers": 72.3,
+ "aug_example": "PositiveRealDB_백색회색연기/강원도강릉시솔향수목원_RG030016/042_액체연료/PositiveRealDB_백색회색연기_강원도강릉시솔향수목원_RG030016_042_액체연료_00003537.jpg"
+}
