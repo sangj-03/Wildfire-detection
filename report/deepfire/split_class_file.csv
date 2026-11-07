@@ -1,0 +1,5 @@
+split,cls,사진,파일KB중앙,JPEG양자화q0중앙,q0종류,선명도중앙
+test,fire,190,10.5,8.0,1,398.3
+test,nofire,190,13.5,8.0,1,1132.1
+trainval,fire,760,10.7,8.0,1,411.1
+trainval,nofire,760,15.2,8.0,1,1491.6

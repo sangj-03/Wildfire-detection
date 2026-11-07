@@ -1,0 +1,7 @@
+feats,depth,acc,rule
+시각만,1,78.9,"fire_px<0.0255 → nofire, 아니면 fire"
+시각만,2,79.7,"fire_px<0.0255 → (bright<48.8 → nofire, 아니면 nofire) / fire_px≥0.0255 → (green_px<0.0249 → fire, 아니면 nofire)"
+시각+파일,1,78.9,"fire_px<0.0255 → nofire, 아니면 fire"
+시각+파일,2,79.7,"fire_px<0.0255 → (bright<48.8 → nofire, 아니면 nofire) / fire_px≥0.0255 → (green_px<0.0249 → fire, 아니면 nofire)"
+파일만,1,66.8,"bpp<0.18 → fire, 아니면 nofire"
+파일만,2,65.0,"bpp<0.18 → (bpp<0.074 → fire, 아니면 fire) / bpp≥0.18 → (bpp<0.195 → fire, 아니면 nofire)"

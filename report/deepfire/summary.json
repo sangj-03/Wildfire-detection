@@ -1,0 +1,72 @@
+{
+ "n": 1900,
+ "exact_groups": 4,
+ "exact_images": 8,
+ "near_pairs": 6,
+ "near_groups": 6,
+ "near_images": 12,
+ "cross_split_pairs": 0,
+ "cross_class_pairs": 0,
+ "test_leak": 0,
+ "dark": {
+  "사진": {
+   "fire": 950,
+   "nofire": 950
+  },
+  "어두운사진": {
+   "fire": 148,
+   "nofire": 18
+  },
+  "어두운pct": {
+   "fire": 15.6,
+   "nofire": 1.9
+  },
+  "평균밝기": {
+   "fire": 81.69999694824219,
+   "nofire": 104.5999984741211
+  }
+ },
+ "rules": [
+  {
+   "feats": "시각만",
+   "depth": 1,
+   "acc": 78.9,
+   "rule": "fire_px<0.0255 → nofire, 아니면 fire"
+  },
+  {
+   "feats": "시각만",
+   "depth": 2,
+   "acc": 79.7,
+   "rule": "fire_px<0.0255 → (bright<48.8 → nofire, 아니면 nofire) / fire_px≥0.0255 → (green_px<0.0249 → fire, 아니면 nofire)"
+  },
+  {
+   "feats": "시각+파일",
+   "depth": 1,
+   "acc": 78.9,
+   "rule": "fire_px<0.0255 → nofire, 아니면 fire"
+  },
+  {
+   "feats": "시각+파일",
+   "depth": 2,
+   "acc": 79.7,
+   "rule": "fire_px<0.0255 → (bright<48.8 → nofire, 아니면 nofire) / fire_px≥0.0255 → (green_px<0.0249 → fire, 아니면 nofire)"
+  },
+  {
+   "feats": "파일만",
+   "depth": 1,
+   "acc": 66.8,
+   "rule": "bpp<0.18 → fire, 아니면 nofire"
+  },
+  {
+   "feats": "파일만",
+   "depth": 2,
+   "acc": 65.0,
+   "rule": "bpp<0.18 → (bpp<0.074 → fire, 아니면 fire) / bpp≥0.18 → (bpp<0.195 → fire, 아니면 nofire)"
+  }
+ ],
+ "cross_dataset": {
+  "Kaggle_mohnish,SmokeFire": 1435,
+  "Kaggle_kutaykutlu,Kaggle_mohnish,SmokeFire": 20,
+  "Kaggle_mohnish": 1
+ }
+}
