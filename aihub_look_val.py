@@ -1,12 +1,13 @@
 """검증 사진 전체(VS.zip)에서 조건에 맞는 사진을 영상마다 1장씩 골라 박스를 그린 격자로 저장.
 python3 -I look_full.py <tag> <pandas query> <n> [crop|corner] [strat열]
 """
+import os
 import io, json, sys, zipfile
 import numpy as np, pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-SP = '/data/home/seame/dl-team-project/team6/report/aihub/samples'
-T = '/data/home/seame/dl-team-project/team6/report/aihub'
+SP = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub', 'samples')
+T = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 B = ('/data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/01-1.정식개방데이터/Validation')
 FONT = ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc', 15, index=3)
 COLOR = {1: (40, 40, 40), 2: (255, 40, 40), 3: (255, 160, 0), 4: (60, 140, 255), 5: (0, 200, 200), 6: (200, 0, 200)}

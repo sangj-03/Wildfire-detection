@@ -1,5 +1,7 @@
 # AI Hub data and everything that lists it frame by frame (AI Hub terms: no redistribution)
 data/
+# ...except the README figure counts (figures/make_figure_data.py: counts only, no frame-level rows)
+!figures/data/
 notebooks/cache/
 notebooks/export/
 prep/manifest.csv.gz

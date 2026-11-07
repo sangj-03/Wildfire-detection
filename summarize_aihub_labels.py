@@ -3,9 +3,10 @@
 analyze_aihub_labels.py가 만든 report/aihub/images.csv.gz를 읽는다.
 사용: python3 -I summarize_aihub_labels.py  →  표를 출력하고 report/aihub/summary_*.csv로 저장
 """
+import os
 import pandas as pd
 
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 pd.set_option('display.width', 250); pd.set_option('display.max_columns', 30)
 df = pd.read_csv(f'{OUT}/images.csv.gz', low_memory=False)
 
@@ -15,7 +16,7 @@ df['label'] = 'normal'
 df.loc[smoke, 'label'] = 'smoke'
 df.loc[df.n_flame > 0, 'label'] = 'fire'
 df.loc[(df.db == 'NegativeDB') & smoke, 'label'] = 'neg_with_smoke'   # 음성인데 연기 라벨이 붙은 사진: 눈으로 확인 전까지 따로 둔다
-# 실제 양성은 4곳(솔향수목원·죽헌저수지삼거리·시루봉정상입구·춘갑봉공터)만 쓴다 (2026-10-15 팀 결정)
+# 실제 양성은 4곳(솔향수목원·죽헌저수지삼거리·시루봉정상입구·춘갑봉공터)만 쓴다 (2026-10-15 결정)
 DROP_POS_PLACES = ['경포대공터', '경포대입구', '모래고개입구', '춘갑봉등산로', '춘갑봉민가', '옥천면비닐하우스', '옥천면교각밑',
                    '춘갑봉샛길', '옥천면계곡', '사천면', '죽헌저수지방둑', '죽헌저수지공터']
 df['use'] = ~((df.db == 'PositiveRealDB') & df.address.isin(['강원도강릉시' + p for p in DROP_POS_PLACES]))

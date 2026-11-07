@@ -4,12 +4,13 @@
 다른 날짜라도 같은 카메라 위치에서 찍은 정지 풍경은 거의 같을 수 있어, 묶음끼리 이어지는지도 센다.
 사용: python3 -I check_aihub_split.py [분할·클래스당 사진 수] [v1|v2]  →  report/aihub/split_<판>_check.csv, split_<판>_cross_blocks.csv
 """
+import os
 import sys
 
 import numpy as np
 import pandas as pd
 
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 2000
 VER = sys.argv[2] if len(sys.argv) > 2 else 'v1'
 pd.set_option('display.width', 250); pd.set_option('display.max_rows', 100)

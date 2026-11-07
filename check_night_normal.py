@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-OUT = '/data/home/seame/dl-team-project/team6/report/night_normal'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'night_normal')
 FONT = ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc', 13, index=3)
 
 

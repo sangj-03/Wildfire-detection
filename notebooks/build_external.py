@@ -4,7 +4,7 @@ import os, sys, time
 import nbformat
 from nbclient import NotebookClient
 
-NB_DIR = '/data/home/seame/dl-team-project/team6/notebooks'
+NB_DIR = os.path.dirname(os.path.realpath(__file__))
 OUT = f'{NB_DIR}/external.ipynb'
 cells = []
 
@@ -50,7 +50,7 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageDraw
 from IPython.display import Image as IImage, display
 
-NB = '/data/home/seame/dl-team-project/team6/notebooks'
+NB = os.path.abspath('')  # the kernel runs in notebooks/ (the builders set its path)
 ROOT = os.path.dirname(NB)
 sys.path[:0] = [NB, ROOT]
 import eda_lib as E

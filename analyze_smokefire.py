@@ -1,6 +1,6 @@
 """SmokeFire(HF EdBianchi/SmokeFire) 점검: 클래스·분할 개수, 이미지 크기·형식, 중복·근접 중복(분할 간 누수, 클래스 간 충돌).
 
-사용: python3 analyze_smokefire.py  →  team6/report/ 에 CSV·요약·샘플 그림 저장
+사용: python3 analyze_smokefire.py  →  report/ 에 CSV·요약·샘플 그림 저장
 """
 import glob, hashlib, io, json, os, random
 from collections import Counter, defaultdict
@@ -9,7 +9,7 @@ import numpy as np
 import pyarrow.parquet as pq
 from PIL import Image, ImageDraw
 
-ROOT = '/data/home/seame/dl-team-project/team6'
+ROOT = os.path.dirname(os.path.realpath(__file__))  # the project folder: this file sits at its top
 DATA = f'{ROOT}/data/SmokeFire'
 OUT = f'{ROOT}/report'
 NEAR = 20         # 16×16 dHash(256비트) 해밍 거리 이하이고

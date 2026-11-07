@@ -7,12 +7,13 @@
  4) 같은 카메라 안 거의 같은 사진 묶음 수 — 사진 수보다 실제로 다른 장면이 얼마나 되는지
 쓰는 사진: 실제 사진(합성 양성 제외), 쓰기로 한 장소(use), 음성 중 백색/회색연기 라벨 사진(neg_with_smoke)은 따로 센다.
 """
+import os
 import sys
 
 import numpy as np
 import pandas as pd
 
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 split = sys.argv[1] if len(sys.argv) > 1 else 'val'
 pd.set_option('display.width', 220); pd.set_option('display.max_columns', 30)
 

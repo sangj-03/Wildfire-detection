@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-ROOT = '/data/home/seame/dl-team-project/team6'
+ROOT = os.path.dirname(os.path.realpath(__file__))  # the project folder: this file sits at its top
 sys.path.insert(0, ROOT)
 from aihub_split_zip import SplitZip  # noqa: E402
 

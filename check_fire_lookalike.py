@@ -12,10 +12,10 @@ import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-sys.path.insert(0, '/data/home/seame/dl-team-project/team6')
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 from aihub_split_zip import SplitZip
 
-ROOT = '/data/home/seame/dl-team-project/team6'
+ROOT = os.path.dirname(os.path.realpath(__file__))  # the project folder: this file sits at its top
 OUT = f'{ROOT}/report/lookalike'
 BASE = ('/data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/'
         '01-1.정식개방데이터')

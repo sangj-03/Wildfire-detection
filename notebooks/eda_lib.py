@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = '/data/home/seame/dl-team-project/team6'
+ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))  # the project folder (this file is in notebooks/)
 sys.path.insert(0, ROOT)
 from aihub_split_zip import SplitZip  # noqa: E402
 
@@ -24,7 +24,7 @@ FONT_PATH = '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
 CAT = {1: '흑색연기', 2: '백색/회색연기', 3: '화염', 4: '구름', 5: '안개/연무', 6: '굴뚝연기'}
 STD_CATEGORIES = list(CAT.items())
 ENV_KEYS = ('address', 'datetime', 'timezone', 'device', 'collection', 'weather', 'humidity', 'distance', 'gps', 'elevation')
-# 실제 양성 16곳 중 쓰지 않는 12곳 (2026-10-15 팀 결정, summarize_aihub_labels.py와 같은 목록)
+# 실제 양성 16곳 중 쓰지 않는 12곳 (2026-10-15 결정, summarize_aihub_labels.py와 같은 목록)
 DROP_POS_PLACES = ['강원도강릉시' + p for p in ['경포대공터', '경포대입구', '모래고개입구', '춘갑봉등산로', '춘갑봉민가',
                    '옥천면비닐하우스', '옥천면교각밑', '춘갑봉샛길', '옥천면계곡', '사천면', '죽헌저수지방둑', '죽헌저수지공터']]
 # 사진 위 박스 색: 화염·연기는 차트의 불꽃·연기 색을 밝게, 방해 요소(구름·안개·굴뚝)는 흰색

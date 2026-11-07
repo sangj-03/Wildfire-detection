@@ -5,7 +5,7 @@
  3) 어두운 사진 비율 — 짧은 변 256으로 줄인 뒤 평균 밝기 50 미만 (AI Hub·D-Fire 점검과 같은 기준)
  4) 깊이 2 숫자 규칙 정확도 — 학습·검증 폴더로 규칙을 찾고 시험 폴더에서 잰다
  5) 받아 둔 다른 데이터(SmokeFire·Kaggle 2종·D-Fire)와 겹치는 사진 — 사진 전체 해시라 잘라 낸 사진은 못 찾는다
-사용: python3 -I analyze_deepfire.py  →  team6/report/deepfire/
+사용: python3 -I analyze_deepfire.py  →  report/deepfire/
 """
 import glob, hashlib, json, os, random
 from collections import Counter, defaultdict
@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = '/data/home/seame/dl-team-project/team6'
+ROOT = os.path.dirname(os.path.realpath(__file__))  # the project folder: this file sits at its top
 DATA = f'{ROOT}/data/DeepFire/extract/Dataset'
 OUT = f'{ROOT}/report/deepfire'
 NEAR, MAE = 20, 8.0

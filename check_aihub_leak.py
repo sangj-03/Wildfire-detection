@@ -4,6 +4,7 @@
 차이 = 32×18 회색 썸네일을 밝기 평균·대비로 맞춘 뒤 평균 절대차(summarize_aihub_images.py의 근접 중복과 같은 척도).
 사용: python3 -I check_aihub_leak.py [클래스당 사진 수]  →  report/aihub/leak_pairs.csv, report/aihub/samples/leak_pairs.jpg
 """
+import os
 import io, sys
 from multiprocessing import Pool
 
@@ -11,14 +12,14 @@ import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
-sys.path.insert(0, '/data/home/seame/dl-team-project/team6')
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 from aihub_split_zip import SplitZip
 
 BASE = ('/data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/'
         '01-1.정식개방데이터')
 TS = f'{BASE}/Training/01.원천데이터/TS.zip'
 VS = f'{BASE}/Validation/01.원천데이터/VS.zip'
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
 
 lab = pd.read_csv(f'{OUT}/labels.csv.gz', usecols=['path', 'split', 'db', 'label', 'use', 'vid'])

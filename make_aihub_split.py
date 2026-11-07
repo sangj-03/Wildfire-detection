@@ -13,12 +13,13 @@
    층: 불꽃·연기 × 낮·밤, 양성 날씨 3종, 정상 × 강릉·그 밖, 정상 날씨(비·흐림), neg_with_smoke
 사용: python3 -I make_aihub_split.py  →  report/aihub/split_v1.csv.gz, split_v1_summary.csv, split_v1_blocks.csv
 """
+import os
 import re
 
 import numpy as np
 import pandas as pd
 
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 TARGET = np.array([.60, .20, .20]); FLOOR = .05; SPLITS = np.array(['train', 'val', 'test'])
 pd.set_option('display.width', 250); pd.set_option('display.max_rows', 200); pd.set_option('display.max_columns', 30)
 

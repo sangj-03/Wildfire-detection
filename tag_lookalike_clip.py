@@ -3,7 +3,7 @@
 종류마다 문장 여러 개를 두고, 사진과 가장 잘 맞는 문장의 종류를 그 사진의 종류로 삼는다(문장 점수 최댓값).
 라벨이 아니라 모델 추정이므로, 종류별 상위·무작위 격자를 사람이 보고 맞는지 확인해야 한다.
 사용(GPU 환경):
-  PYTHONPATH=team6/pylib_hf HF_HOME=/data/huggingface /data/seotturi/.venv/bin/python tag_lookalike_clip.py
+  PYTHONPATH=pylib_hf HF_HOME=/data/huggingface /data/seotturi/.venv/bin/python tag_lookalike_clip.py
   → report/lookalike/clip_tags.csv.gz,  ... tag_lookalike_clip.py sheets → report/lookalike/clip_<종류>_<데이터>.jpg
 """
 import os, sys
@@ -13,7 +13,7 @@ import pandas as pd
 import torch
 from PIL import Image, ImageDraw, ImageFont
 
-sys.path.insert(0, '/data/home/seame/dl-team-project/team6')
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 import check_fire_lookalike as L
 
 OUT = L.OUT

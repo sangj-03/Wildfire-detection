@@ -1,4 +1,4 @@
-"""eda.ipynb를 팀에 보낼 묶음으로 내보낸다: 코드 뺀 HTML → 인쇄용 CSS → Chrome PDF(A4 가로) → zip(eda.ipynb, eda_lib.py, eda_view.pdf).
+"""eda.ipynb를 공유용 묶음으로 내보낸다: 코드 뺀 HTML → 인쇄용 CSS → Chrome PDF(A4 가로) → zip(eda.ipynb, eda_lib.py, eda_view.pdf).
 사용: ../.venv_eda/bin/python export_eda.py  →  export/eda_view.html, eda_view.pdf, team7_aihub_eda.zip
 """
 import os, subprocess, sys, zipfile

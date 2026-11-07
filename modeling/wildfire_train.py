@@ -10,12 +10,13 @@
     loader = DataLoader(ds, batch_size=16, sampler=sampler, num_workers=12, persistent_workers=True)
     for epoch in range(E): sampler.set_epoch(epoch); ...
 """
+import os
 import sys
 
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, '/data/home/seame/dl-team-project/team6')
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from wildfire_data import IMAGENET_MEAN, IMAGENET_STD, ZipReader, preprocess  # noqa: E402
 
 # ---------------------------------------------------------------- 학습 세트: 영상당 N장 추출, 클래스 가중치

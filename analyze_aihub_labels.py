@@ -1,7 +1,7 @@
 """AI Hub 71330(지역안전재난(산불) 방재의 고도화를 위한 대규모 인공지능 데이터베이스) 라벨 점검.
 
 TL.zip(학습)·VL.zip(검증)의 JSON을 전부 읽어 사진 한 장에 한 줄인 표를 만든다.
-사용: python3 -I analyze_aihub_labels.py  →  team6/report/aihub/images.csv.gz
+사용: python3 -I analyze_aihub_labels.py  →  report/aihub/images.csv.gz
 """
 import json, os, re, zipfile
 from multiprocessing import Pool
@@ -11,7 +11,7 @@ import pandas as pd
 BASE = ('/data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/'
         '01-1.정식개방데이터')
 ZIPS = {'train': f'{BASE}/Training/02.라벨링데이터/TL.zip', 'val': f'{BASE}/Validation/02.라벨링데이터/VL.zip'}
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 CAT = {1: 'black', 2: 'white', 3: 'flame', 4: 'cloud', 5: 'fog', 6: 'chimney'}   # 흑색연기, 백색/회색연기, 화염, 구름, 안개/연무, 굴뚝연기
 os.makedirs(OUT, exist_ok=True)
 

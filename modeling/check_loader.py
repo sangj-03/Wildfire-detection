@@ -1,9 +1,10 @@
 """모델링 단계 초안: wildfire_train의 torch Dataset·Sampler·증강이 학습 환경에서 그대로 도는지 확인한다.
 사용: /data/seotturi/.venv/bin/python -I modeling/check_loader.py  →  modeling/draft_outputs/loader_check.json, aug_examples.jpg
 """
+import os
 import json, sys, time
 
-sys.path[:0] = ['/data/home/seame/dl-team-project/team6', '/data/home/seame/dl-team-project/team6/modeling']
+sys.path[:0] = [os.path.dirname(os.path.dirname(os.path.realpath(__file__))), os.path.dirname(os.path.realpath(__file__))]
 import numpy as np
 import torch
 from PIL import Image, ImageDraw
@@ -12,7 +13,7 @@ from torch.utils.data import DataLoader
 import wildfire_data as W
 import wildfire_train as WT
 
-OUT = '/data/home/seame/dl-team-project/team6/modeling/draft_outputs'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'draft_outputs')
 
 m = W.load_manifest()
 tr = m[m.split == 'train']

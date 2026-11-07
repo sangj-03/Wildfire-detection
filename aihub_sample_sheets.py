@@ -3,6 +3,7 @@
 summarize_aihub_labels.py가 만든 report/aihub/labels.csv.gz를 읽는다.
 사용: python3 -I aihub_sample_sheets.py  →  report/aihub/sheet_*.jpg
 """
+import os
 import io, json, random, zipfile
 
 import pandas as pd
@@ -10,7 +11,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 BASE = ('/data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/'
         '01-1.정식개방데이터/Validation')
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 FONT = ImageFont.truetype('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc', 15, index=3)   # KR
 COLOR = {1: (40, 40, 40), 2: (255, 40, 40), 3: (255, 160, 0), 4: (60, 140, 255), 5: (0, 200, 200), 6: (200, 0, 200)}
 NAME = {1: '흑연', 2: '백연', 3: '화염', 4: '구름', 5: '안개', 6: '굴뚝'}

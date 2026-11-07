@@ -4,7 +4,7 @@ import os, sys, time
 import nbformat
 from nbclient import NotebookClient
 
-NB_DIR = '/data/home/seame/dl-team-project/team6/notebooks'
+NB_DIR = os.path.dirname(os.path.realpath(__file__))
 OUT = f'{NB_DIR}/preprocess.ipynb'
 cells = []
 
@@ -42,7 +42,7 @@ md(r'''
 
 이 노트북은 **데이터 단계(가공·전처리)까지**다. 학습 때의 처리(영상당 N장 추출, 클래스 가중치·균형 추출, 증강)는 모델링 단계에서 정한다(코드 초안 `../modeling/`).
 
-> 사진 출처: AI Hub(aihub.or.kr) 71330. 팀 내부 분석에만 쓰고 재배포하지 않는다.
+> 사진 출처: AI Hub(aihub.or.kr) 71330. 내부 분석에만 쓰고 재배포하지 않는다.
 ''')
 
 md('## 0. 준비')
@@ -54,7 +54,7 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageDraw
 from IPython.display import Image as IImage, display
 
-NB = '/data/home/seame/dl-team-project/team6/notebooks'
+NB = os.path.abspath('')  # the kernel runs in notebooks/ (the builders set its path)
 ROOT = os.path.dirname(NB)
 sys.path[:0] = [NB, ROOT]
 import eda_lib as E
@@ -121,7 +121,7 @@ AI Hub 라벨에는 사진 단위 클래스가 없다. DB 이름(`info.name` = �
 | **양성** | `PositiveRealDB`이고 화염·흑색연기·백색/회색연기 박스가 하나라도 있음 (`sub` = 화염이 있으면 불꽃, 연기만 있으면 연기) |
 | **음성** | `NegativeDB`이고 화염·연기 박스가 없음 (구름·안개/연무·굴뚝연기 박스만 있음) |
 | 제외 · 합성 양성 | `PositiveSyntheticDB` (CCTV·드론 화면에 불꽃·연기를 붙여 넣은 사진) |
-| 제외 · 안 쓰는 양성 장소 | 실제 양성 16곳 중 팀이 쓰지 않기로 한 12곳 (10/15 팀 결정) |
+| 제외 · 안 쓰는 양성 장소 | 실제 양성 16곳 중 쓰지 않기로 한 12곳 (10/15 결정) |
 | 따로 보관 · 음성 속 연기 | `NegativeDB`인데 연기 박스가 있음 (산불인지 판별 불확실 → 학습·시험에서 빼고 따로 보관) |
 ''')
 code(r'''

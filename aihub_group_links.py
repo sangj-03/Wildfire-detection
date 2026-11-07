@@ -4,12 +4,13 @@ split_v1 점검에서 날짜가 다른 묶음 사이에 썸네일 차이 0.0인 
 묶음 A에서 최대 1,000장을 뽑아 묶음 B 전체와 비교하고(양방향), 차이 < 6인 사진 수를 센다.
 사용: python3 -I aihub_group_links.py  →  report/aihub/group_links.csv (make_aihub_split.py가 읽어 묶음을 합친다)
 """
+import os
 import itertools, re
 
 import numpy as np
 import pandas as pd
 
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 lab = pd.read_csv(f'{OUT}/labels.csv.gz', usecols=['path', 'split', 'db', 'use'])
 meta = pd.read_csv(f'{OUT}/images.csv.gz', low_memory=False, usecols=['path', 'address', 'datetime'])
 df = lab.merge(meta, on='path').rename(columns={'split': 'src'})

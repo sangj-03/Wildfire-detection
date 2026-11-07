@@ -6,6 +6,7 @@
 사용: python3 -I analyze_aihub_images.py val|train   →  report/aihub/img_<split>.csv.gz, img_<split>_thumbs.npy (32×18 회색, 근접 중복용)
 학습 사진(TS.z01~TS.zip 분할 zip)은 합치지 않고 aihub_split_zip.SplitZip으로 읽는다.
 """
+import os
 import io, sys, zipfile
 from multiprocessing import Pool
 
@@ -13,13 +14,13 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-sys.path.insert(0, '/data/home/seame/dl-team-project/team6')
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 from aihub_split_zip import SplitZip
 
 BASE = ('/data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/'
         '01-1.정식개방데이터')
 ZIPS = {'val': f'{BASE}/Validation/01.원천데이터/VS.zip', 'train': f'{BASE}/Training/01.원천데이터/TS.zip'}
-OUT = '/data/home/seame/dl-team-project/team6/report/aihub'
+OUT = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'report', 'aihub')
 STROKE = np.load(f'{OUT}/text_stroke.npy'); RING = np.load(f'{OUT}/text_ring.npy')
 
 

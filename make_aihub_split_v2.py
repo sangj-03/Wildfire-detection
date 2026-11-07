@@ -16,10 +16,11 @@ split_v1(make_aihub_split.py)은 층에 기기·방해 요소가 없어, 시험 
  - 층의 사진 수는 전처리 목록(prep/manifest.csv.gz, uncertain.csv.gz)에 남은 사진으로 센다.
 사용: .venv_eda/bin/python -I make_aihub_split_v2.py  →  report/aihub/split_v2.csv.gz, split_v2_summary.csv, split_v2_moves.csv
 """
+import os
 import numpy as np
 import pandas as pd
 
-ROOT = '/data/home/seame/dl-team-project/team6'
+ROOT = os.path.dirname(os.path.realpath(__file__))  # the project folder: this file sits at its top
 OUT = f'{ROOT}/report/aihub'
 TARGET = np.array([.60, .20, .20]); FLOOR = .05; SPLITS = np.array(['train', 'val', 'test'])
 N_STARTS, SEED, TIE = 240, 0, 0.001       # 무작위 시작 수, 시드, 같은 비용이면 v1에 가까운 쪽(옮긴 묶음 하나에 0.001)
