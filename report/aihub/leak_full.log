@@ -1,0 +1,31 @@
+2026-10-16 18:10:27 download runner finished
+2026-10-16 17:53:10 [71330/485844] merged /data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/01-1.정식개방데이터/Training/01.원천데이터/TS.zip 94834498462 bytes
+2026-10-16 17:53:11 [71330/485844] done
+2026-10-16 18:02:51 [71330/485843] attempt 1: curl exit 0, tar 107374337024 bytes
+2026-10-16 18:10:01 [71330/485843] merged /data/aihub/71330/265.지역안전재난(산불)_방재의_고도화를_위한_대규모_인공지능_데이터베이스_구축/01-1.정식개방데이터/Training/01.원천데이터/TS.z05 107374182400 bytes
+2026-10-16 18:10:04 [71330/485843] done
+2026-10-16 18:10:04 [71330 TS] all files finished one pass: 9 done markers
+done markers: 9
+total 616899908
+-rw-rw-r-- 1 seame seame 107374182400 Oct 16 04:12 TS.z01
+-rw-rw-r-- 1 seame seame 107374182400 Oct 16 04:16 TS.z02
+-rw-rw-r-- 1 seame seame 107374182400 Oct 16 11:14 TS.z03
+-rw-rw-r-- 1 seame seame 107374182400 Oct 16 11:19 TS.z04
+-rw-rw-r-- 1 seame seame 107374182400 Oct 16 18:10 TS.z05
+-rw-rw-r-- 1 seame seame  94834498462 Oct 16 17:53 TS.zip
+complete True volumes 6 jpg 560365 (라벨 560,365)
+read ok 410396 iveDB_구름_강원도강릉시강동면모전리_BC002001_001_없음_00003002.jpg
+read ok 1265327 흑색연기_강원도강릉시솔향수목원_RG030055_061_연막탄(흑색)_00000720.jpg
+read ok 1072933 heticDB_백색회색연기_칠성저수지_BD014003_003_나뭇잎_00000348.jpg
+2026-10-16 18:10:29 leak check start
+학습 zip 전체 받음: True / 쌍 8996 {'fire': 2999, 'normal': 3000, 'smoke': 2997}
+         gap  d_near    d_other
+label                          
+fire    60.0    0.93  35.639999
+normal  48.0    0.42  32.560001
+smoke   60.0    0.74  41.419998
+차이 < 4: 같은 영상 학습 프레임 {'fire': 94.1, 'normal': 92.8, 'smoke': 92.8} / 다른 묶음 학습 사진 {'fire': 0.0, 'normal': 0.0, 'smoke': 0.0}
+차이 < 6: 같은 영상 학습 프레임 {'fire': 98.4, 'normal': 95.9, 'smoke': 97.2} / 다른 묶음 학습 사진 {'fire': 0.1, 'normal': 0.0, 'smoke': 0.0}
+차이 < 8: 같은 영상 학습 프레임 {'fire': 99.3, 'normal': 97.3, 'smoke': 98.6} / 다른 묶음 학습 사진 {'fire': 0.4, 'normal': 0.0, 'smoke': 0.0}
+saved leak_pairs.jpg
+2026-10-16 18:15:38 leak check end

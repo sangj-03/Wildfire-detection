@@ -1,0 +1,4 @@
+db,places,cameras,videos,images
+NegativeDB,54,211,1796,179989
+PositiveRealDB,16,227,10978,323904
+PositiveSyntheticDB,18,33,118,126107

@@ -1,0 +1,5 @@
+label,cctv,drone,gopro,phone
+fire,0.0,10.1,89.9,0.0
+neg_with_smoke,0.0,14.1,85.9,0.0
+normal,3.2,20.9,72.6,3.3
+smoke,0.0,15.1,84.9,0.0

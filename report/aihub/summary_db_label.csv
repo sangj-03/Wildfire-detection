@@ -1,0 +1,5 @@
+db,fire,neg_with_smoke,normal,smoke,All
+NegativeDB,0,23729,156260,0,179989
+PositiveRealDB,93582,0,0,230322,323904
+PositiveSyntheticDB,25178,0,0,100929,126107
+All,118760,23729,156260,331251,630000
